@@ -74,11 +74,13 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'ffaker', '~> 2.21'
   gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
   gem 'rubocop-rspec', '~> 2.16'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.3'
 end
 
-gem 'jsbundling-rails', '~> 1.1'
 gem 'cssbundling-rails', '~> 1.1', '>= 1.1.2'
+gem 'jsbundling-rails', '~> 1.1'

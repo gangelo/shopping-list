@@ -69,4 +69,19 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  config.generators do |g|
+    g.test_framework :rspec
+    g.fixture_replacement :factory_bot
+    g.factory_bot dir: 'spec/factories'
+    g.controller_specs true
+    g.request_specs false
+    g.helper_specs false
+    g.feature_specs true
+    g.mailer_specs true
+    g.model_specs true
+    g.observer_specs false
+    g.routing_specs false
+    g.view_specs false
+  end
 end
