@@ -79,3 +79,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.3'
 end
+
+gem 'jsbundling-rails', '~> 1.1'
+gem 'cssbundling-rails', '~> 1.1', '>= 1.1.2'
