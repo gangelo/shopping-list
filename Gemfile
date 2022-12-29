@@ -82,5 +82,6 @@ group :test do
   gem 'shoulda-matchers', '~> 5.3'
 end
 
+gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'cssbundling-rails', '~> 1.1', '>= 1.1.2'
 gem 'jsbundling-rails', '~> 1.1'

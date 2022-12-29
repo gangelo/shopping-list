@@ -84,4 +84,7 @@ Rails.application.configure do
     g.routing_specs false
     g.view_specs false
   end
+
+  # Required for Devise emails
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
