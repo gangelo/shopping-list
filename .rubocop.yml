@@ -19,3 +19,7 @@ AllCops:
     - 'config/**/*'
     - 'vendor/**/*'
     - 'scratch*.rb'
+    - 'db/migrate/*'
+
+Style/Documentation:
+  Enabled: false

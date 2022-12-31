@@ -56,6 +56,7 @@ gem 'kaminari', '~> 1.2', '>= 1.2.2'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails', '~> 6.2'
   gem 'pry-byebug'
   gem 'pry-rails'
 end
@@ -70,18 +71,20 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem 'letter_opener', '~> 1.8', '>= 1.8.1'
 end
 
 group :test do
   gem 'capybara'
-  gem 'factory_bot_rails', '~> 6.2'
   gem 'ffaker', '~> 2.21'
   gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
   gem 'rubocop-rspec', '~> 2.16'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.3'
+  gem 'simplecov', '~> 0.22.0', require: false
 end
 
-gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'cssbundling-rails', '~> 1.1', '>= 1.1.2'
+gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'jsbundling-rails', '~> 1.1'
