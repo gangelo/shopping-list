@@ -30,7 +30,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# /tmp/*
+coverage/**/*
 *.code-workspace
 readme.txt
 scratch.rb
@@ -39,3 +39,4 @@ scratch.rb
 !/app/assets/builds/.keep
 
 /node_modules
+spec/examples.txt
