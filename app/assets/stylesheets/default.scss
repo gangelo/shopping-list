@@ -3,10 +3,14 @@ body {
 }
 
 .shoppy {
-  color: #333333;
+  color: #dddddd;
 }
 
 .shoppy .heart {
   color: #cc0000;
   font-weight: bold;
+}
+
+a.no-text-decoration {
+  text-decoration: none !important;
 }

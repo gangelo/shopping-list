@@ -1,1 +1,7 @@
-<h1 class="shoppy">Sh<span class="heart">&lt;3</span>ppy</h1>
+<%= link_to(root_path, class: 'no-text-decoration') do
+  html = <<~HTML
+    <h1 class="shoppy">Sh<span class="heart">&lt;3</span>ppy</h1>
+  HTML
+  html.html_safe
+end
+%>
