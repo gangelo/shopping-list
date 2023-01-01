@@ -11,7 +11,9 @@
   </head>
 
   <body>
-    <%= render @menu_presenter if @menu_presenter %>
+    <%#= render @menu_presenter unless devise_controller? %>
+    <%= render @menu_presenter %>
+    <%#= render @menu_presenter.to_partial_path %>
     <%= render 'shared/flash' %>
     <%= yield %>
   </body>
