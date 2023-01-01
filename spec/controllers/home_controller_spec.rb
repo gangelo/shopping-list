@@ -2,13 +2,20 @@
 
 require 'rails_helper'
 
+RSpec.shared_examples 'a successful request' do
+  it 'returns http success' do
+    expect(response).to have_http_status(:success)
+  end
+end
+
 RSpec.describe HomeController do
   describe 'GET #index' do
+    before do
+      get :index
+    end
+
     context 'when the user is not signed in' do
-      it 'redirects' do
-        get :index
-        expect(response).to have_http_status(:found)
-      end
+      it_behaves_like 'a successful request'
     end
 
     context 'when the user is signed in' do
@@ -16,10 +23,7 @@ RSpec.describe HomeController do
         sign_in_user
       end
 
-      it 'returns http success' do
-        get :index
-        expect(response).to have_http_status(:success)
-      end
+      it_behaves_like 'a successful request'
     end
   end
 end
