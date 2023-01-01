@@ -9,6 +9,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable
 
+  validates :first_name, :last_name, length: { maximum: 32 }, allow_blank: true
+
   def admin?
     false
   end
