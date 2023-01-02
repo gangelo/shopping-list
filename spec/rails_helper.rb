@@ -76,6 +76,8 @@ RSpec.configure do |config|
 
   # Needed for controllers implementing Devise callbacks.
   config.include Devise::Test::ControllerHelpers, type: :controller
+  # Needed for Devise sign in/sign out requests.
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 end
 
 Shoulda::Matchers.configure do |config|

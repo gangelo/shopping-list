@@ -40,7 +40,7 @@ RSpec.describe Presenter do
       it 'returns the controller object' do
         expect(presenter.controller).to_not be_nil
         expect(presenter.controller.controller_name).to eq 'controller_name'
-        expect(presenter.controller.controller_action).to eq 'controller_action'
+        expect(presenter.controller.action_name).to eq 'action_name'
       end
     end
 

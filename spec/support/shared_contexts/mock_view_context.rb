@@ -9,7 +9,7 @@ RSpec.shared_context 'mock_view_context' do
   let(:controller) do
     controller = double('controller')
     allow(controller).to receive(:controller_name).and_return('controller_name')
-    allow(controller).to receive(:controller_action).and_return('controller_action')
+    allow(controller).to receive(:action_name).and_return('action_name')
     controller
   end
   let(:user) { create(:user) }

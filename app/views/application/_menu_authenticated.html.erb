@@ -1,31 +1,31 @@
 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
   <li>
-    <a href="#" class="nav-link text-white">
+    <a href="#" class="nav-link <%= menu_authenticated.shopping_lists_css_class %>">
       <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"></use></svg>
       Shopping lists
     </a>
   </li>
   <li>
-    <a href="#" class="nav-link text-white">
+    <a href="#" class="nav-link <%= menu_authenticated.items_css_class %>">
       <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"></use></svg>
       Items
     </a>
   </li>
   <li>
-    <a href="#" class="nav-link text-white">
+    <a href="#" class="nav-link <%= menu_authenticated.stores_css_class %>">
       <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"></use></svg>
       Stores
     </a>
   </li>
   <li>
-    <a href="#" class="nav-link text-white">
+    <a href="#" class="nav-link <%= menu_authenticated.dashboard_css_class %>">
       <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"></use></svg>
       Dashboard
     </a>
   </li>
 </ul>
 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-  <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+  <input type="search" class="search form-control" placeholder="Search..." aria-label="Search">
 </form>
 <div class="text-end">
   <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light me-2', data: { turbo_method: :delete } %>
