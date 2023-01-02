@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe User do
+  subject(:user) { create(:user) }
+
   describe 'validations' do
     it { should validate_length_of(:first_name).is_at_most(32).allow_blank }
     it { should validate_length_of(:last_name).is_at_most(32).allow_blank }
@@ -39,17 +41,21 @@ RSpec.describe User do
     end
   end
 
+  describe '#admin?' do
+    it 'returns false' do
+      expect(user.admin?).to eq false
+    end
+  end
+
   describe '#full_name?' do
     context 'when first_name and last_name are present?' do
-      let(:user) { create(:user) }
-
       it 'returns true' do
         expect(user.full_name?).to eq true
       end
     end
 
     context 'when first_name and last_name are not present?' do
-      let(:user) { create(:user, first_name: nil, last_name: nil) }
+      subject(:user) { create(:user, first_name: nil, last_name: nil) }
 
       it 'returns true' do
         expect(user.full_name?).to eq false
@@ -59,15 +65,13 @@ RSpec.describe User do
 
   describe '#full_name_or_email' do
     context 'when first_name and last_name are present?' do
-      let(:user) { create(:user) }
-
       it "returns user's the full name" do
         expect(user.full_name_or_email).to eq "#{user.first_name} #{user.last_name}"
       end
     end
 
     context 'when first_name and last_name are not present?' do
-      let(:user) { create(:user, first_name: nil, last_name: nil) }
+      subject(:user) { create(:user, first_name: nil, last_name: nil) }
 
       it "returns the user's email" do
         expect(user.full_name_or_email).to eq user.email
