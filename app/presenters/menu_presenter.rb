@@ -10,12 +10,4 @@ class MenuPresenter < Presenter
       MenuUnauthenticatedPresenter.new(view_context)
     end
   end
-
-  def name
-    'Menu'
-  end
-
-  def to_partial_path
-    name.underscore
-  end
 end

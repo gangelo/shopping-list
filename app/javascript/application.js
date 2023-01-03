@@ -1,3 +1,3 @@
 // Entry point for the build script in your package.json
 import * as bootstrap from "bootstrap"
-import "./react/src/index.js"
+import "./react/src/alert.js"

@@ -38,12 +38,4 @@ class MenuAuthenticatedPresenter < Presenter
     'text-white'
     # end
   end
-
-  def name
-    'MenuAuthenticated'
-  end
-
-  def to_partial_path
-    name.underscore
-  end
 end
