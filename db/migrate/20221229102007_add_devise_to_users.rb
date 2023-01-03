@@ -5,6 +5,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[7.0]
     create_table :users do |t|
       t.string :first_name,         limit: 32
       t.string :last_name,          limit: 32
+      t.boolean :admin,             null: false, default: false
 
       ## Database authenticatable
       t.string :email,              null: false, default: ''

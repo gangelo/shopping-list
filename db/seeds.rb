@@ -6,3 +6,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+if Rails.env.development?
+  User.find_or_initialize_by(email: "public.gma@gmail.com")
+    .update(admin: true,
+            first_name: "Gene",
+            last_name: "Angelo",
+            password: "password",
+    )
+end
