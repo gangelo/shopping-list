@@ -5,11 +5,7 @@ require 'rails_helper'
 RSpec.describe MenuPresenter do
   subject(:menu_presenter) { described_class.new view_context }
 
-  include_context 'mock_view_context'
-
-  describe 'included modules' do
-    it { include Presentable }
-  end
+  include_context 'with view_context'
 
   describe '#name' do
     it 'returns the presenter name' do
@@ -32,7 +28,7 @@ RSpec.describe MenuPresenter do
       end
     end
 
-    context 'when the user is signed in' do
+    context 'when the user is not signed in' do
       let(:user_signed_in) { false }
 
       it 'returns a MenuUnauthenticatedPresenter presenter object' do

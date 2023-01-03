@@ -25,18 +25,16 @@ RSpec.describe User do
     let(:user) { create(:user) }
 
     describe '.before_save' do
-      describe 'normalizes #first_name, #last_name and #email' do
-        it 'converts #first_name to capitalize' do
-          expect(user.first_name).to eq user.first_name.capitalize
-        end
+      it 'normalizes #first_name to capitalize' do
+        expect(user.first_name).to eq user.first_name.capitalize
+      end
 
-        it 'converts #last_name to capitalize' do
-          expect(user.last_name).to eq user.last_name.capitalize
-        end
+      it 'normalizes #last_name to capitalize' do
+        expect(user.last_name).to eq user.last_name.capitalize
+      end
 
-        it 'converts #email to downcase' do
-          expect(user.email).to eq user.email.downcase
-        end
+      it 'normalizes #email to downcase' do
+        expect(user.email).to eq user.email.downcase
       end
     end
   end

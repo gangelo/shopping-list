@@ -42,19 +42,17 @@ RSpec.describe FlashMessagePresenter do
       described_class.collection message, type:
     end
 
-    context 'with a single message' do
-      context 'with type :notice' do
-        it 'returns the message prefixed with a notice exclaimation blurb' do
-          expect(flash_message_presenter[0].message).to match(/.+ #{message}\z/)
-        end
+    context 'with a single message and type :notice' do
+      it 'returns the message prefixed with a notice exclaimation blurb' do
+        expect(flash_message_presenter[0].message).to match(/.+ #{message}\z/)
       end
+    end
 
-      context 'with other than type :notice' do
-        let(:type) { :alert }
+    context 'with a single message and a type other than :notice' do
+      let(:type) { :alert }
 
-        it 'returns the message' do
-          expect(flash_message_presenter[0].message).to match(/\A#{message}\z/)
-        end
+      it 'returns the message' do
+        expect(flash_message_presenter[0].message).to match(/\A#{message}\z/)
       end
     end
 

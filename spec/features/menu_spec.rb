@@ -19,12 +19,27 @@ RSpec.describe 'Menu' do
 
     it_behaves_like 'the user is at the root path'
 
-    it 'displays the authenticated user menu' do
+    it 'displays the Shopping lists menu item' do
       expect(page).to have_link 'Shopping lists'
+    end
+
+    it 'displays the Items menu item' do
       expect(page).to have_link 'Items'
+    end
+
+    it 'displays the Stores menu item' do
       expect(page).to have_link 'Stores'
+    end
+
+    it 'displays the Dashboard menu item' do
       expect(page).to have_link 'Dashboard'
+    end
+
+    it 'displays the Search textbox' do
       expect(page).to have_field placeholder: 'Search...'
+    end
+
+    it 'displays the Log out button' do
       expect(page).to have_button 'Log out'
     end
   end
@@ -36,10 +51,19 @@ RSpec.describe 'Menu' do
 
     it_behaves_like 'the user is at the root path'
 
-    it 'displays the unauthenticated user menu' do
+    it 'displays the FAQs menu item' do
       expect(page).to have_link 'FAQs'
+    end
+
+    it 'displays the About menu item' do
       expect(page).to have_link 'About'
+    end
+
+    it 'displays the Login menu item' do
       expect(page).to have_link 'Login'
+    end
+
+    it 'displays the Sign-up menu item' do
       expect(page).to have_link 'Sign-up'
     end
   end

@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe Presenter do
   subject(:presenter) { described_class.new view_context }
 
-  include_context 'mock_view_context'
+  include_context 'with view_context'
 
   describe '.new' do
     it 'instantiates a Presenter object' do
@@ -37,16 +37,21 @@ RSpec.describe Presenter do
 
   describe 'delegation' do
     describe '#controller' do
-      it 'returns the controller object' do
+      it 'delegates the #controller to #view_context' do
         expect(presenter.controller).not_to be_nil
+      end
+
+      it 'delegates the #controller_name to #view_context' do
         expect(presenter.controller.controller_name).to eq 'controller_name'
+      end
+
+      it 'delegates the #action_name to #view_context' do
         expect(presenter.controller.action_name).to eq 'action_name'
       end
     end
 
     describe '#current_user' do
       it 'returns the current user object' do
-        expect(presenter.current_user).not_to be_nil
         expect(presenter.current_user).to eq user
       end
     end
