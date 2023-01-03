@@ -3,12 +3,12 @@
 class FlashMessagePresenter
   include Presentable
 
-  TYPES = %i[alert notice]
+  TYPES = %i[alert notice].freeze
   TYPE_CSS_CLASSES = {
     alert: 'alert-danger',
-    notice: 'alert-success',
-  }
-  NOTICE_EXCLAIMATIONS = %w[Awesome! Yahoo! Yay! Yippie! :)]
+    notice: 'alert-success'
+  }.freeze
+  NOTICE_EXCLAIMATIONS = %w[Awesome! Yahoo! Yay! Yippie! :)].freeze
 
   attr_reader :type
 
@@ -21,9 +21,9 @@ class FlashMessagePresenter
 
   class << self
     def collection(messages, type:)
-      return [new(messages, type: type)] unless messages.respond_to? :map
+      return [new(messages, type:)] unless messages.respond_to? :map
 
-      messages&.map { |message| new(message, type: type) } || []
+      messages&.map { |message| new(message, type:) } || []
     end
   end
 
@@ -40,8 +40,6 @@ class FlashMessagePresenter
   private
 
   def notice_exclaimation
-    @notice_exclaimation ||= begin
-      NOTICE_EXCLAIMATIONS[rand(0...NOTICE_EXCLAIMATIONS.length)]
-    end
+    @notice_exclaimation ||= NOTICE_EXCLAIMATIONS[rand(0...NOTICE_EXCLAIMATIONS.length)]
   end
 end

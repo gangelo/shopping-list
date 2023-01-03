@@ -8,7 +8,7 @@ RSpec.shared_examples 'the user is at the root path' do
   end
 end
 
-RSpec.describe 'Menu', type: :feature do
+RSpec.describe 'Menu' do
   let(:user) { create(:user) }
 
   context 'when the user is signed in' do

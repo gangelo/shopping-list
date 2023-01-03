@@ -3,13 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe Presenter do
-  include_context 'mock_view_context'
-
   subject(:presenter) { described_class.new view_context }
+
+  include_context 'mock_view_context'
 
   describe '.new' do
     it 'instantiates a Presenter object' do
-      expect { presenter }.to_not raise_error
+      expect { presenter }.not_to raise_error
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe Presenter do
   describe '#current_user?' do
     context 'when current_user is present' do
       it 'returns true' do
-        expect(presenter.current_user?).to eq true
+        expect(presenter.current_user?).to be true
       end
     end
 
@@ -30,7 +30,7 @@ RSpec.describe Presenter do
       let(:user) { nil }
 
       it 'returns false' do
-        expect(presenter.current_user?).to eq false
+        expect(presenter.current_user?).to be false
       end
     end
   end
@@ -38,7 +38,7 @@ RSpec.describe Presenter do
   describe 'delegation' do
     describe '#controller' do
       it 'returns the controller object' do
-        expect(presenter.controller).to_not be_nil
+        expect(presenter.controller).not_to be_nil
         expect(presenter.controller.controller_name).to eq 'controller_name'
         expect(presenter.controller.action_name).to eq 'action_name'
       end
@@ -46,7 +46,7 @@ RSpec.describe Presenter do
 
     describe '#current_user' do
       it 'returns the current user object' do
-        expect(presenter.current_user).to_not be_nil
+        expect(presenter.current_user).not_to be_nil
         expect(presenter.current_user).to eq user
       end
     end

@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe MenuAuthenticatedPresenter do
-  include_context 'mock_view_context'
-
   subject(:menu_authenticated_presenter) { described_class.new view_context }
+
+  include_context 'mock_view_context'
 
   # describe '#shopping_lists_css_class' do
   #   context 'when the user is on shopping_lists_path' do

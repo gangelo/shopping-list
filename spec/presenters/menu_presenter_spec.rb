@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe MenuPresenter do
-  include_context 'mock_view_context'
-
   subject(:menu_presenter) { described_class.new view_context }
+
+  include_context 'mock_view_context'
 
   describe 'included modules' do
     it { include Presentable }

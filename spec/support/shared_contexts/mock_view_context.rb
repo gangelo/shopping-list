@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_context 'mock_view_context' do
   let(:view_context) do
     view_context = double('view_context')

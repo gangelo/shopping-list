@@ -17,7 +17,7 @@ RSpec.describe FlashMessagePresenter do
       it 'returns the css classes for the message types' do
         expect(described_class::TYPE_CSS_CLASSES).to include(
           alert: 'alert-danger',
-          notice: 'alert-success',
+          notice: 'alert-success'
         )
       end
     end
@@ -39,13 +39,13 @@ RSpec.describe FlashMessagePresenter do
 
   describe '.collection' do
     subject(:flash_message_presenter) do
-      described_class.collection message, type: type
+      described_class.collection message, type:
     end
 
     context 'with a single message' do
       context 'with type :notice' do
         it 'returns the message prefixed with a notice exclaimation blurb' do
-          expect(flash_message_presenter[0].message).to match /.+ #{message}\z/
+          expect(flash_message_presenter[0].message).to match(/.+ #{message}\z/)
         end
       end
 
@@ -53,7 +53,7 @@ RSpec.describe FlashMessagePresenter do
         let(:type) { :alert }
 
         it 'returns the message' do
-          expect(flash_message_presenter[0].message).to match /\A#{message}\z/
+          expect(flash_message_presenter[0].message).to match(/\A#{message}\z/)
         end
       end
     end
