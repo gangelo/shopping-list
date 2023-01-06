@@ -1,0 +1,19 @@
+<% content_for :page_header do %>
+  Measurements
+<% end %>
+
+<div id="measurements" class="container grid-list">
+  <div class="row">
+    <div class="col header">
+      Measurement
+    </div>
+    <div class="col header">
+      Abbreviation
+    </div>
+    <div class="col header">
+      Actions
+    </div>
+  </div>
+  <%= render @measurements %>
+</div>
+<%= link_to "New measurement", new_measurement_path %>

@@ -1,0 +1,12 @@
+<div id="<%= dom_id measurement %>" class="row">
+  <div class="col">
+    <%= measurement.name %>
+  </div>
+  <div class="col">
+    <%= measurement.abbreviation %>
+  </div>
+  <div class="col">
+    <%= link_to 'Show', measurement, class: "btn btn-outline-primary btn-sm" %>
+    <%= link_to "Edit", edit_measurement_path(measurement), class: "btn btn-outline-primary btn-sm" %>
+  </div>
+</div>

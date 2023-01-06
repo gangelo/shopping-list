@@ -1,0 +1,44 @@
+<div class="admin-menu">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people"></use></svg>
+            Users
+          </a>
+        </li>
+         <%# <li>
+          < link_to(admin_users_path, class: "nav-link text-white") do >
+            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people"></use></svg>
+            Users
+          < end >
+        </li> %>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#list-check"></use></svg>
+            Shopping lists
+          </a>
+        </li>
+        <li>
+          <%= link_to(admin_items_path, class: "nav-link text-white") do %>
+            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#cart"></use></svg>
+            Items
+          <% end %>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#building"></use></svg>
+            Stores
+          </a>
+        </li>
+         <li>
+          <%= link_to(measurements_path, class: "nav-link text-white") do %>
+            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#basket"></use></svg>
+            Measurements
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

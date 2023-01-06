@@ -4,6 +4,7 @@ class Presenter
   attr_reader :view_context
 
   delegate :controller, :current_user, :user_signed_in?, to: :view_context
+  delegate :admin, :admin?, to: :current_user, allow_nil: true
 
   def initialize(view_context)
     @view_context = view_context

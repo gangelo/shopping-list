@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_29_102007) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_04_175618) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "measurements", force: :cascade do |t|
+    t.string "name", limit: 16
+    t.string "abbreviation", limit: 8
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["abbreviation"], name: "index_measurements_on_abbreviation", unique: true
+    t.index ["name"], name: "index_measurements_on_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", limit: 32

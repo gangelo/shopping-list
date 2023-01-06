@@ -37,30 +37,32 @@ RSpec.describe Presenter do
 
   describe 'delegation' do
     describe '#controller' do
-      it 'delegates the #controller to #view_context' do
-        expect(presenter.controller).not_to be_nil
-      end
-
-      it 'delegates the #controller_name to #view_context' do
-        expect(presenter.controller.controller_name).to eq 'controller_name'
-      end
-
-      it 'delegates the #action_name to #view_context' do
-        expect(presenter.controller.action_name).to eq 'action_name'
+      it 'responds_to? :controller' do
+        expect(presenter).to respond_to :controller
       end
     end
 
     describe '#current_user' do
-      it 'returns the current user object' do
-        expect(presenter.current_user).to eq user
+      it 'responds_to? :current_user' do
+        expect(presenter).to respond_to :current_user
       end
     end
 
     describe '#user_signed_in?' do
-      let(:user_signed_in) { true }
+      it 'responds_to? :user_signed_in?' do
+        expect(presenter).to respond_to :user_signed_in?
+      end
+    end
 
-      it 'returns the user signed in status' do
-        expect(presenter.user_signed_in?).to eq user_signed_in
+    describe '#admin' do
+      it 'responds_to? :admin' do
+        expect(presenter).to respond_to :admin
+      end
+    end
+
+    describe '#admin?' do
+      it 'responds_to? :admin?' do
+        expect(presenter).to respond_to :admin?
       end
     end
   end

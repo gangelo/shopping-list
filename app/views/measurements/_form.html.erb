@@ -1,0 +1,9 @@
+<div class="row justify-content-start">
+  <div class="col-12">
+    <%= simple_form_for measurement do |f| %>
+      <%= f.input :name %>
+      <%= f.input :abbreviation %>
+      <%= f.button :submit, 'Update', class: 'btn btn-primary btn-form-inline' %>
+    <% end %>
+  </div>
+</div>

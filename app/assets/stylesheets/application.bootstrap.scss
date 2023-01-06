@@ -1,4 +1,10 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
+.container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 @import 'default';
+@import 'grid-list';

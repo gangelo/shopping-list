@@ -4,6 +4,7 @@ FactoryBot.define do
   factory :user do
     first_name { FFaker::Name.first_name }
     last_name { FFaker::Name.last_name }
+    admin { false }
     email { nil }
     password { nil }
     confirmation_token { FFaker::Random.rand(9_999_999_999) }
@@ -18,5 +19,9 @@ FactoryBot.define do
 
     user.email = "#{evaluator.first_name}.#{evaluator.last_name}@domain.com".downcase if evaluator.email.nil?
     user.confirmed_at = evaluator.confirmed_at
+  end
+
+  trait :admin do
+    admin { true }
   end
 end

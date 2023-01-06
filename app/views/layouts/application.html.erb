@@ -14,6 +14,9 @@
     <div id="root">
       <%= render @menu_presenter %>
       <%= render 'flash' %>
+      <% if content_for?(:page_header) %>
+        <div class="h2"><%= yield :page_header %></div>
+      <% end %>
       <%= yield %>
     </div>
   </body>

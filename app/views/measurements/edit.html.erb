@@ -1,0 +1,13 @@
+<% content_for :page_header do %>
+  Edit Measurement
+<% end %>
+
+<div class="container">
+  <%= render "form", measurement: @measurement %>
+  <div class="row justify-content-start">
+    <div class="col-12 btn-form-inline">
+      <%= render "back_button", back_path: measurements_path %>
+      <%= button_to "Delete", @measurement, method: :delete, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

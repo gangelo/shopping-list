@@ -1,16 +1,41 @@
+@mixin admin-colors {
+  @extend .text-white;
+  background-color: #cc0000;
+}
+
 body {
   margin: 1em !important;
 }
 
 .shoppy {
   color: #dddddd;
-}
+  .heart {
+    color: #cc0000;
+    font-weight: bold;
 
-.shoppy .heart {
-  color: #cc0000;
-  font-weight: bold;
+  }
 }
 
 a.no-text-decoration {
   text-decoration: none !important;
+}
+
+div.btn-form-inline, input.btn-form-inline {
+  margin-top: 1rem;
+}
+
+div.btn-form-inline > form {
+  display: inline;
+}
+
+.admin-menu {
+  @include admin-colors;
+}
+
+// Forms
+.form {
+  .header {
+    font-weight: bold;
+    color: lighten($black, 30%);
+  }
 }

@@ -1,0 +1,35 @@
+<% content_for :page_header do %>
+  Measurement
+<% end %>
+
+<div class="container">
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <div class="simple_form" id="<%= dom_id @measurement %>">
+        <div class="form-group show_only required measurement_name form-group-valid">
+          <label class="show_only required" for="measurement_name">
+            Name
+          </label>
+          <label class="string optional form-control show_only show_only_input" for="measurement_Bag">
+            <%= @measurement.name %>
+          </label>
+        </div>
+        <div class="form-group show_only required measurement_abbreviation form-group-valid">
+          <label class="show_only required" for="measurement_abbreviation">
+            Abbreviation
+          </label>
+          <label class="string optional form-control show_only show_only_input" for="measurement_bag">
+            <%= @measurement.abbreviation %>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-start">
+    <div class="col-12 btn-form-inline">
+      <%= render "back_button", back_path: measurements_path %>
+      <%= link_to "Edit", edit_measurement_path(@measurement), class: 'btn btn-primary' %>
+      <%= button_to "Delete", @measurement, method: :delete, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

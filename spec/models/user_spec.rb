@@ -8,6 +8,8 @@ RSpec.describe User do
   describe 'validations' do
     it { is_expected.to validate_length_of(:first_name).is_at_most(32).allow_blank }
     it { is_expected.to validate_length_of(:last_name).is_at_most(32).allow_blank }
+    # Raises a warning because this can't truly be tested.
+    # it { should validate_inclusion_of(:admin).in_array([true, false]) }
   end
 
   describe 'associations' do
@@ -40,8 +42,18 @@ RSpec.describe User do
   end
 
   describe '#admin?' do
-    it 'returns false' do
-      expect(user.admin?).to be false
+    context 'when admin is true' do
+      subject(:user) { create(:user, :admin) }
+
+      it 'returns true' do
+        expect(user.admin?).to eq true
+      end
+    end
+
+    context 'when admin is false' do
+      it 'returns false' do
+        expect(user.admin?).to eq false
+      end
     end
   end
 

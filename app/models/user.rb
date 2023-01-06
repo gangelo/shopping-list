@@ -10,9 +10,10 @@ class User < ApplicationRecord
          :confirmable, :lockable
 
   validates :first_name, :last_name, length: { maximum: 32 }, allow_blank: true
+  validates :admin, inclusion: [true, false]
 
   def admin?
-    false
+    admin
   end
 
   def full_name?
