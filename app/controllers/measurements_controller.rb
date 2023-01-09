@@ -1,9 +1,10 @@
 class MeasurementsController < ApplicationController
-  before_action :set_measurement, only: %i[ show edit update destroy ]
+  include PageableConcern
+  before_action :set_measurement, only: %i[show edit update destroy]
 
   # GET /measurements or /measurements.json
   def index
-    @measurements = Measurement.all.order(:name)
+    @measurements = Measurement.page(page).order(:name).per(items_per_page)
   end
 
   # GET /measurements/1 or /measurements/1.json
@@ -58,6 +59,9 @@ class MeasurementsController < ApplicationController
   end
 
   private
+    def pageable_model
+      Measurement
+    end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_measurement
